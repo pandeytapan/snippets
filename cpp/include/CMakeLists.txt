@@ -11,3 +11,9 @@ project(cpp-test-headers-macro-comp
 )
 message(STATUS "Building header-only library: ${PROJECT_NAME}")
 message(STATUS "Library source directory: ${PROJECT_SOURCE_DIR}\n")
+
+add_library(${PROJECT_NAME} INTERFACE)
+
+target_include_directories( ${PROJECT_NAME}
+    INTERFACE ${PROJECT_SOURCE_DIR}
+)
