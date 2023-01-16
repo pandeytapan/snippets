@@ -1,5 +1,5 @@
-#if !defined( __COMVIVA_UNO_10_C_SRC_MEM_MACRO_H__ )
-#define __COMVIVA_UNO_10_C_SRC_MEM_MACRO_H__
+#if !defined( __CPP_SRC_MEM_MACRO_H__ )
+#define __CPP_SRC_MEM_MACRO_H__
 /*!
   \def safe_cpy_len(_in_dest_max, _in_dest_cur, _in_src, _in_offset)
   returns how many 8-bit elements can be appended/ copied from \a _in_src into \a _in_dest.
@@ -21,4 +21,4 @@
        typeof (b) _b = (b); \
        _a < _b ? _a : _b; })
 
-#endif // __COMVIVA_UNO_10_C_SRC_MEM_MACRO_H__
+#endif // __CPP_SRC_MEM_MACRO_H__
