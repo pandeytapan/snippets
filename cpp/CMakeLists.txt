@@ -30,4 +30,5 @@ endif()
 add_subdirectory(./mem_cpy)
 add_subdirectory(./include)
 
-target_link_libraries(${PROJECT_NAME} PUBLIC cpp-test-headers-macro-comp)
+target_link_libraries("${PROJECT_NAME}.assert" PUBLIC cpp-test-headers-macro-comp)
+target_link_libraries("${PROJECT_NAME}.test" PUBLIC cpp-test-headers-macro-comp)
