@@ -1,3 +1,6 @@
 {
-    "cmake.sourceDirectory": "${workspaceFolder}/cpp/mem_cpy"
+    "cmake.sourceDirectory": "${workspaceFolder}/cpp/mem_cpy",
+    "files.associations": {
+        "cassert": "cpp"
+    }
 }

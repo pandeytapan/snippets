@@ -14,7 +14,7 @@ set(CMAKE_CXX_EXTENSIONS ON)
 ##############################
 # Project name
 ##############################
-project(${PROJECT_NAME} VERSION 1.0 DESCRIPTION "memory block copy verifier" LANGUAGES CXX)
+project(${PROJECT_NAME} VERSION 1.0 DESCRIPTION "memcopy" LANGUAGES CXX)
 
 # guard against in-source builds
 if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_BINARY_DIR})
@@ -31,4 +31,20 @@ add_subdirectory(./mem_cpy)
 add_subdirectory(./include)
 
 target_link_libraries("${PROJECT_NAME}.assert" PUBLIC cpp-test-headers-macro-comp)
-target_link_libraries("${PROJECT_NAME}.test" PUBLIC cpp-test-headers-macro-comp)
+target_link_libraries("${PROJECT_NAME}.test" PUBLIC cpp-test-headers-macro-comp GTest::gtest_main)
+  
+
+include(FetchContent)
+FetchContent_Declare(
+  googletest
+  URL https://github.com/google/googletest/archive/03597a01ee50ed33e9dfd640b249b4be3799d395.zip
+  )
+
+# include(GoogleTest)
+# gtest_discover_tests("${PROJECT_NAME}.test")
+# For Windows: Prevent overriding the parent project's compiler/linker settings
+# set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+FetchContent_MakeAvailable(googletest)
+
+enable_testing()
+
